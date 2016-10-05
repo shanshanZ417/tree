@@ -48,11 +48,15 @@ class XXTree:
 								for j in range(1, len(names)):
 										name = "│   " + name						
 								treelist.append(name)
-				for i in range(0,len(txtfile)-1):
-					named = "├── " + txtfile[i]
-					treelist.append(named)
-				named2 = "└── " + txtfile[len(txtfile)-1]
-				treelist.append(named2)
+				if(len(txtfile)-1>0):
+					for i in range(0,len(txtfile)-1):
+						named = "├── " + txtfile[i]
+						treelist.append(named)
+				if(len(txtfile)-1==0):
+					named2 = "└── " + txtfile[len(txtfile)-1]
+					treelist.append(named2)
+				else:
+					pass
 				for i in range(0, len(treelist)):
 						print (treelist[i])
 				print("")
