@@ -32,31 +32,18 @@ class XXTree:
 								temp = fullpath.replace(dir, "")
 								temp2 = temp.split("/")
 								if(len(temp2)==1):
-										txtfile.append(temp2[len(temp2)-1])
-										txtJudge = 1
+										pass
 								else:
 										final = 1
 						path = fullpath.replace(dir, "")
 						names = path.split("/")
-						if (txtJudge = 1):
-								pass
+						if (final == 0):
+							name = "├── " + names[len(names) - 1]
 						else:
-								if (final == 0):
-										name = "├── " + names[len(names) - 1]
-								else:
-										name = "└── " + names[len(names)-1]
-								for j in range(1, len(names)):
-										name = "│   " + name						
-								treelist.append(name)
-				if(len(txtfile)-1>0):
-					for i in range(0,len(txtfile)-1):
-						named = "├── " + txtfile[i]
-						treelist.append(named)
-				if(len(txtfile)-1==0):
-					named2 = "└── " + txtfile[len(txtfile)-1]
-					treelist.append(named2)
-				else:
-					pass
+							name = "└── " + names[len(names)-1]
+						for j in range(1, len(names)):
+							name = "│   " + name						
+				
 				for i in range(0, len(treelist)):
 						print (treelist[i])
 				print("")
