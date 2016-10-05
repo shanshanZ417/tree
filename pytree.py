@@ -36,14 +36,14 @@ class XXTree:
 						names = path.split("/")
 						if(judge != len(list)):
 								if (final == 0):
-										name = "├-- " + names[len(names) - 1]
+										name = "├── " + names[len(names) - 1]
 								else:
-										name = "└" + names[len(names)-1]
+										name = "└── " + names[len(names)-1]
 								for j in range(1, len(names) - 1):
 										name = "|    " + name						
 								treelist.append(name)
 						else:
-								name = "└" + names[len(names)-1]
+								name = "└── " + names[len(names)-1]
 								treelist.append(name)
 				for i in range(0, len(treelist)):
 						print (treelist[i])
