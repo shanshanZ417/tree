@@ -29,23 +29,17 @@ class XXTree:
 								filesNum = filesNum + 1
 								temp = fullpath.replace(dir, "")
 								temp2 = temp.split("/")
-								print("iiiiiiiiiiiiiii")
-								print(temp2)
 								if(len(temp2)==1):
 										pass
 								else:
 										final = 1
 						path = fullpath.replace(dir, "")
 						names = path.split("/")
-						print("namessssss")
-						print(names)
-						print(len(names))
 						if (final == 0):
 								name = "├── " + names[len(names) - 1]
 						else:
 								name = "└── " + names[len(names)-1]
 						for j in range(1, len(names)):
-								print("iamhererererer")
 								name = "│   " + name						
 						treelist.append(name)
 				for i in range(0, len(treelist)):
