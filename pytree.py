@@ -12,6 +12,7 @@ class XXTree:
 				filesNum = 0
 				judge = 0
 				list = self.getList(dir, 0)
+				length = len(list)
 				treelist = [] 	
 				for i in range(0, len(list)):
 						final = 0
@@ -28,23 +29,25 @@ class XXTree:
 								filesNum = filesNum + 1
 								temp = fullpath.replace(dir, "")
 								temp2 = temp.split("/")
-								if(len(temp2)==2):
+								print("iiiiiiiiiiiiiii")
+								print(temp2)
+								if(len(temp2)==1):
 										pass
 								else:
 										final = 1
 						path = fullpath.replace(dir, "")
 						names = path.split("/")
-						if(judge != len(list)):
-								if (final == 0):
-										name = "├-- " + names[len(names) - 1]
-								else:
-										name = "└" + names[len(names)-1]
-								for j in range(1, len(names) - 1):
-										name = "|    " + name						
-								treelist.append(name)
+						print("namessssss")
+						print(names)
+						print(len(names))
+						if (final == 0):
+								name = "├-- " + names[len(names) - 1]
 						else:
 								name = "└" + names[len(names)-1]
-								treelist.append(name)
+						for j in range(1, len(names)):
+								print("iamhererererer")
+								name = "|    " + name						
+						treelist.append(name)
 				for i in range(0, len(treelist)):
 						print (treelist[i])
 				print("")
