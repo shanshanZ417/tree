@@ -14,7 +14,9 @@ class XXTree:
 				list = self.getList(dir, 0)
 				length = len(list)
 				treelist = [] 	
+				txtfile = []
 				for i in range(0, len(list)):
+						txtJudge = 0
 						final = 0
 						judge = judge + 1
 						fullpath = list[i] 
@@ -30,18 +32,27 @@ class XXTree:
 								temp = fullpath.replace(dir, "")
 								temp2 = temp.split("/")
 								if(len(temp2)==1):
-										pass
+										txtfile.append(temp2[len(temp2)-1])
+										txtJudge = 1
 								else:
 										final = 1
 						path = fullpath.replace(dir, "")
 						names = path.split("/")
-						if (final == 0):
-								name = "├── " + names[len(names) - 1]
+						if (txtJudge = 1):
+								pass
 						else:
-								name = "└── " + names[len(names)-1]
-						for j in range(1, len(names)):
-								name = "│   " + name						
-						treelist.append(name)
+								if (final == 0):
+										name = "├── " + names[len(names) - 1]
+								else:
+										name = "└── " + names[len(names)-1]
+								for j in range(1, len(names)):
+										name = "│   " + name						
+								treelist.append(name)
+				for i in range(0,len(txtfile)-1):
+					named = "├── " + txtfile[i]
+					treelist.append(named)
+				named2 = "└── " + txtfile[len(txtfile)-1]
+				treelist.append(named2)
 				for i in range(0, len(treelist)):
 						print (treelist[i])
 				print("")
