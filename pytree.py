@@ -41,12 +41,12 @@ class XXTree:
 						print(names)
 						print(len(names))
 						if (final == 0):
-								name = "├-- " + names[len(names) - 1]
+								name = "├── " + names[len(names) - 1]
 						else:
-								name = "└" + names[len(names)-1]
+								name = "└── " + names[len(names)-1]
 						for j in range(1, len(names)):
 								print("iamhererererer")
-								name = "|    " + name						
+								name = "│   " + name						
 						treelist.append(name)
 				for i in range(0, len(treelist)):
 						print (treelist[i])
