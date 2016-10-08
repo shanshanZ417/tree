@@ -6,7 +6,11 @@ directNum = 0
 fileNum = 0
 names = []
 def sortedTree(dir):
-	files = sorted(os.listdir(dir))
+	files = []
+	filetemp = sorted(os.listdir(dir))
+	for files1 in filetemp:
+        	if not files1.startswith('.'):
+			files.append(files1)
 	return files
 
 def buildTree(dir,front):
