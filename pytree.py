@@ -42,27 +42,28 @@ def buildTree(dir,front):
 				names.append(name)
 if __name__ == '__main__':
 	dir = None
-	if len(sys.argv) == 2:
-		dir = sys.argv[1]
-	if len(sys.argv) == 1:
-		dir = "."
-	else:
+	if (len(sys.argv)!==1 and len(sys.argv)!=2):
 		print("Your enter is not valid!")
-	buildTree(dir,"")
-	for i in rnage(0,len(names)):
-		print(names[i])
-	print("")
-	directories = "directories"
-	files = "files"
-	if(directNum == 1):
-		directories = "directory"
 	else:
-		pass
-	if(files == 1):
-		files = "file"
-	else:
-		pass
-	if(directNum == 0 and fileNum == 0):
-		print("There is no directories and files here!")
-	else:
-		print(str(directNum) + " " + directories + ", " + str(fileNum) + " " + files) 		
+		if len(sys.argv) == 2:
+			dir = sys.argv[1]
+		if len(sys.argv) == 1:
+			dir = "."
+		buildTree(dir,"")
+		for i in range(0,len(names)):
+			print(names[i])
+		print("")
+		directories = "directories"
+		files = "files"
+		if(directNum == 1):
+			directories = "directory"
+		else:
+			pass
+		if(files == 1):
+			files = "file"
+		else:
+			pass
+		if(directNum == 0 and fileNum == 0):
+			print("There is no directories and files here!")
+		else:
+			print(str(directNum) + " " + directories + ", " + str(fileNum) + " " + files) 		
