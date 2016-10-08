@@ -69,4 +69,4 @@ if __name__ == '__main__':
             files = "file"
         else:
             pass
-        print(str(directNum) + " " + directories + ", " + str(fileNum) + " " + files) 		
+        print(str(directNum) + " " + directories + ", " + str(fileNum) + " " + files)
