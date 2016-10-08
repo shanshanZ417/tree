@@ -15,7 +15,7 @@ def sortedTree(dir):
     return files
 
 
-def buildTree(dir,front):
+def buildTree(dir, front):
     itemOrder = 0
     list = []
     global names
@@ -24,39 +24,39 @@ def buildTree(dir,front):
     symbol1 = "    "
     symbol2 = "│   "
     files = sortedTree(dir)
-    for path in sorted(files,key=str.lower):
+    for path in sorted(files, key=str.lower):
         curDir = dir + "/" + path
         itemOrder = itemOrder + 1
         if os.path.isdir(curDir):
             directNum = directNum + 1
             if(itemOrder != len(files)):
-                name = front + "├── "+ path
+                name = front + "├── " + path
                 names.append(name)
-                buildTree(curDir,front + symbol2)
+                buildTree(curDir, front + symbol2)
             else:
                 name = front + "└── " + path
                 names.append(name)
-                buildTree(curDir,front + symbol1)
+                buildTree(curDir, front + symbol1)
         else:
             fileNum = fileNum + 1
             if (itemOrder != len(files)):
-                name = front + "├── "+ path
+                name = front + "├── " + path
                 names.append(name)
             else:
                 name = front + "└── " + path
                 names.append(name)
 if __name__ == '__main__':
     dir = None
-    if (len(sys.argv)!=1 and len(sys.argv)!=2):
+    if (len(sys.argv) != 1 and len(sys.argv) != 2):
         print("Your enter is not valid!")
     else:
         if len(sys.argv) == 2:
             dir = sys.argv[1]
         if len(sys.argv) == 1:
             dir = "."
-        buildTree(dir,"")
+        buildTree(dir, "")
         print(dir)
-        for i in range(0,len(names)):
+        for i in range(0, len(names)):
             print(names[i])
         print("")
         directories = "directories"
@@ -69,4 +69,4 @@ if __name__ == '__main__':
             files = "file"
         else:
             pass
-        print(str(directNum)+" "+directories+", "+str(fileNum)+" "+files) 		
+        print(str(directNum) + " " + directories + ", " + str(fileNum) + " " + files) 		
