@@ -46,7 +46,7 @@ def buildTree(dir,front):
 				names.append(name)
 if __name__ == '__main__':
 	dir = None
-	if (len(sys.argv)!==1 and len(sys.argv)!=2):
+	if (len(sys.argv)!=1 and len(sys.argv)!=2):
 		print("Your enter is not valid!")
 	else:
 		if len(sys.argv) == 2:
