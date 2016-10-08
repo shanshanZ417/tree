@@ -6,12 +6,15 @@ directNum = 0
 fileNum = 0
 names = []
 
+
 def sortedTree(dir):
 	files = []
 	for files1 in os.listdir(dir):
 		if not files1.startswith("."):
 			files.append(files1)
 	return files
+
+
 def buildTree(dir,front):
 	itemOrder = 0
 	list = []
@@ -47,11 +50,13 @@ if __name__ == '__main__':
 	if (len(sys.argv)!=1 and len(sys.argv)!=2):
 		print("Your enter is not valid!")
 	else:
+		
 		if len(sys.argv) == 2:
 			dir = sys.argv[1]
 		if len(sys.argv) == 1:
 			dir = "."
 		buildTree(dir,"")
+		print(dir)
 		for i in range(0,len(names)):
 			print(names[i])
 		print("")
