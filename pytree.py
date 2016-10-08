@@ -5,14 +5,13 @@ import string
 directNum = 0
 fileNum = 0
 names = []
+
 def sortedTree(dir):
 	files = []
-	filetemp = sorted(os.listdir(dir))
-	for files1 in filetemp:
-        	if not files1.startswith('.'):
+	for files1 in os.listdir(dir):
+		if not files1.startswith("."):
 			files.append(files1)
 	return files
-
 def buildTree(dir,front):
 	itemOrder = 0
 	list = []
@@ -22,8 +21,7 @@ def buildTree(dir,front):
 	symbol1 = "    "
 	symbol2 = "│   "
 	files = sortedTree(dir)
-	for i in range(0,len(files)):
-		path = files[i]
+	for path in sorted(files,key=str.lower):
 		curDir = dir + "/" + path
 		itemOrder = itemOrder + 1
 		if os.path.isdir(curDir):
