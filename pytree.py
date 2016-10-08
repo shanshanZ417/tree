@@ -8,11 +8,11 @@ names = []
 
 
 def sortedTree(dir):
-	files = []
-	for files1 in os.listdir(dir):
-		if not files1.startswith("."):
-			files.append(files1)
-	return files
+    files = []
+    for files1 in os.listdir(dir):
+        if not files1.startswith("."):
+            files.append(files1)
+    return files
 
 
 def buildTree(dir,front):
