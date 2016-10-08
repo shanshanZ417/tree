@@ -65,7 +65,4 @@ if __name__ == '__main__':
 			files = "file"
 		else:
 			pass
-		if(directNum == 0 and fileNum == 0):
-			print("There is no directories and files here!")
-		else:
-			print(str(directNum) + " " + directories + ", " + str(fileNum) + " " + files) 		
+		print(str(directNum) + " " + directories + ", " + str(fileNum) + " " + files) 		
