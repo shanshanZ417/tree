@@ -19,8 +19,8 @@ def buildTree(dir,front):
 	global names
 	global directNum
 	global fileNum
-	symbol1 = " "
-	symbol2 = "| "
+	symbol1 = "    "
+	symbol2 = "│   "
 	files = sortedTree(dir)
 	for i in range(0,len(files)):
 		path = files[i]
